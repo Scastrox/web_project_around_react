@@ -1,0 +1,108 @@
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 20px;
+  width: 880px;
+  margin: 0px auto 0 auto;
+}
+
+.gallery__card {
+  background: #ffffff;
+  border-radius: 10px;
+  height: 361px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  position: relative;
+}
+
+.gallery__card-image {
+  width: 282px;
+  height: 282px;
+}
+
+.gallery__card-image:hover {
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+.gallery__card-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 30px;
+  width: 246px;
+  margin: 25px auto 30px 20px;
+}
+
+.gallery__card-title {
+  font-family: "Inter-black";
+  font-weight: 900;
+  font-size: 24px;
+  line-height: 1.5;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  padding: 0;
+  margin: 0;
+}
+
+.gallery__card-like {
+  width: 21px;
+  height: 19px;
+  background-color: transparent;
+  background-image: url(../images/like.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  border: none;
+  align-self: center;
+}
+
+.gallery__card-like_active {
+  width: 21px;
+  height: 19px;
+  background-image: url(../images/like-active.svg);
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  border: none;
+  align-self: center;
+  opacity: 1;
+}
+
+.gallery__card-like:hover {
+  opacity: 0.5;
+  cursor: pointer;
+}
+
+.gallery__card-delete {
+  border: none;
+  width: 19px;
+  height: 19px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: url(../images/delete.svg);
+  background-repeat: no-repeat;
+  padding: 0;
+  background-size: contain;
+}
+
+.gallery__card-delete:hover {
+  opacity: 0.5;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 880px) {
+  .gallery {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 21px 17px;
+    margin: 50px auto 0;
+    max-width: 282px;
+    width: 100%;
+  }
+}
