@@ -5,7 +5,8 @@
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.5);
-  display: none;
+  /* display: none; -> ahora React decide si el popup existe en el DOM */
+  display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
