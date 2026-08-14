@@ -1,9 +1,9 @@
 import { useState } from 'react';
-import Popup from './components/Popup/Popup.jsx';
-import NewCard from './components/Popup/form/NewCard/NewCard.jsx';
-import EditProfile from './components/Popup/form/EditProfile/EditProfile.jsx';
-import EditAvatar from './components/Popup/form/EditAvatar/EditAvatar.jsx';
-import Card from './components/Card/Card.jsx';
+import Popup from '../Popup/Popup.jsx';
+import NewCard from '../NewCard/NewCard.jsx';
+import EditProfile from '../EditProfile/EditProfile.jsx';
+import EditAvatar from '../Avatar/EditAvatar.jsx';
+import Card from '../Card/Card.jsx';
 
 const newCardPopup = { title: 'Nuevo Lugar', children: <NewCard /> };
 const editProfilePopup = { title: 'Editar perfil', children: <EditProfile /> };

@@ -1,4 +1,5 @@
-import ImagePopup from '../Popup/ImagePopup/ImagePopup.jsx';
+import ImagePopup from '../ImagePopup/ImagePopup.jsx';
+import RemoveCard from '../RemoveCard/RemoveCard.jsx';
 
 export default function Card(props) {
   const { card, handleOpenPopup } = props;
@@ -6,11 +7,17 @@ export default function Card(props) {
 
   // sin title, para que Popup renderice el diseño de imagen
   const imageComponent = { children: <ImagePopup card={card} /> };
+  const removeCardComponent = { title: '¿Estás seguro?', children: <RemoveCard /> };
 
   return (
     <div className="gallery__card">
       <img className="gallery__card-image" src={link} alt={name} onClick={() => handleOpenPopup(imageComponent)} />
-      <button aria-label="Eliminar tarjeta" className="gallery__card-delete" type="button" />
+      <button
+        aria-label="Eliminar tarjeta"
+        className="gallery__card-delete"
+        type="button"
+        onClick={() => handleOpenPopup(removeCardComponent)}
+      />
       <div className="gallery__card-info">
         <h2 className="gallery__card-title">{name}</h2>
         <button
