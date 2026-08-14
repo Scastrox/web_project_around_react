@@ -1,38 +1,13 @@
-import logo from '../images/logo_around.svg';
+import Header from './Header/Header.jsx';
+import Main from './Main/Main.jsx';
+import Footer from './Footer/Footer.jsx';
 
 function App() {
   return (
     <div className="page">
-      <header className="header">
-        <img className="header__logo" src={logo} alt="Logotipo de Around The U.S." />
-      </header>
-
-      <main className="content">
-        <section className="profile">
-          <div className="profile__container">
-            <div className="profile__content">
-              <div className="profile__avatar">
-                <img className="profile__picture" alt="Foto de perfil del usuario" />
-                <button className="profile__avatar-edit-button" type="button"></button>
-              </div>
-              <div className="profile__info">
-                <h1 className="profile__info-name">Sergio Castro</h1>
-                <p className="profile__info-description">Estudiante</p>
-              </div>
-              <button className="profile__info-edit-button" type="button"></button>
-            </div>
-          </div>
-          <div>
-            <button className="profile__info-add-button" type="button"></button>
-          </div>
-        </section>
-
-        <section className="gallery">{/* Las tarjetas se generarán dinámicamente con React */}</section>
-      </main>
-
-      <footer className="footer">
-        <p className="footer__text">© 2026 Sergio Castro</p>
-      </footer>
+      <Header />
+      <Main />
+      <Footer />
     </div>
   );
 }
