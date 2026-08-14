@@ -86,12 +86,7 @@ export default function Main() {
 
       <section className="gallery">
         {galleryCards.map((card) => (
-          <Card
-            key={card._id}
-            card={card}
-            handleOpenPopup={handleOpenPopup}
-            handleRemoveCard={handleRemoveCard}
-          />
+          <Card key={card._id} card={card} handleOpenPopup={handleOpenPopup} handleRemoveCard={handleRemoveCard} />
         ))}
       </section>
 
