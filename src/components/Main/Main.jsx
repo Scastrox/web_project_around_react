@@ -80,7 +80,7 @@ export default function Main() {
 
       <section className="gallery">
         {cards.map((card) => (
-          <Card key={card._id} card={card} />
+          <Card key={card._id} card={card} handleOpenPopup={handleOpenPopup} />
         ))}
       </section>
 

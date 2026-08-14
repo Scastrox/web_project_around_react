@@ -24,9 +24,10 @@ export default function Popup(props) {
 
   return (
     <div className="popup" onClick={handleOverlayClick}>
-      <div className="popup__container">
+      {/* el popup de imagen no lleva título y usa su propio contenedor */}
+      <div className={title ? 'popup__container' : 'popup__image'}>
         <button aria-label="Cerrar ventana emergente" className="popup__close-button" type="button" onClick={onClose} />
-        <h2 className="popup__form-title">{title}</h2>
+        {title && <h2 className="popup__form-title">{title}</h2>}
         {children}
       </div>
     </div>
