@@ -33,6 +33,7 @@ console.log(cards);
 
 export default function Main() {
   const [popup, setPopup] = useState(null);
+  const [galleryCards, setGalleryCards] = useState(cards);
 
   function handleOpenPopup(popupToOpen) {
     setPopup(popupToOpen);
@@ -40,6 +41,11 @@ export default function Main() {
 
   function handleClosePopup() {
     setPopup(null);
+  }
+
+  function handleRemoveCard(cardId) {
+    setGalleryCards((currentCards) => currentCards.filter((card) => card._id !== cardId));
+    handleClosePopup();
   }
 
   return (
@@ -79,8 +85,13 @@ export default function Main() {
       </section>
 
       <section className="gallery">
-        {cards.map((card) => (
-          <Card key={card._id} card={card} handleOpenPopup={handleOpenPopup} />
+        {galleryCards.map((card) => (
+          <Card
+            key={card._id}
+            card={card}
+            handleOpenPopup={handleOpenPopup}
+            handleRemoveCard={handleRemoveCard}
+          />
         ))}
       </section>
 

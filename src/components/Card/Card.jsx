@@ -2,12 +2,15 @@ import ImagePopup from '../ImagePopup/ImagePopup.jsx';
 import RemoveCard from '../RemoveCard/RemoveCard.jsx';
 
 export default function Card(props) {
-  const { card, handleOpenPopup } = props;
-  const { name, link, isLiked } = card;
+  const { card, handleOpenPopup, handleRemoveCard } = props;
+  const { name, link, isLiked, _id } = card;
 
   // sin title, para que Popup renderice el diseño de imagen
   const imageComponent = { children: <ImagePopup card={card} /> };
-  const removeCardComponent = { title: '¿Estás seguro?', children: <RemoveCard /> };
+  const removeCardComponent = {
+    title: '¿Estás seguro?',
+    children: <RemoveCard onConfirm={() => handleRemoveCard(_id)} />,
+  };
 
   return (
     <div className="gallery__card">
